@@ -1,0 +1,1802 @@
+/*
+- Global (like navbar, footer etc) CSS style for all pages 
+  (Except for report which has its own css file)
+
+Index:
+1. body, html & default settings
+2. navbar
+3. Footer
+4. Responsiveness; For tablet screens, mobile screeens & smaller mobile screens
+*/
+
+body 
+{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;  
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  overflow-x: hidden; /*to prevent any possible horizontal scroll bar*/
+  background-color: lightcyan; 
+  position: relative; /*stay Relative to its positon*/
+}
+
+html 
+{
+  scroll-behavior: smooth; /* Smooth scrolling for contents & scroll-up button*/
+}
+
+/*Making default settings---------------------------------------------------------*/
+/*default line used for news & wellness page*/
+hr 
+{
+  border-top: 1.5px solid #4d388b; /*line size & color*/
+}
+
+/*Links default setting*/
+li
+{
+  list-style: none; /*removes the disc*/
+}
+
+li a:hover /*when mouse is dragged on the link*/
+{
+  color: red; /*change the color to red*/
+  text-decoration: underline; /*add text decoration*/
+} 
+
+a
+{
+  text-decoration: none; /*remove default underline*/
+  color: blue; /*make defualt color to blue*/
+}
+
+a:hover /*when mouse is dragged on the link*/
+{
+  color: red; /*change the color*/
+  text-decoration: underline; /*add text decoration*/
+} 
+
+/* ==========================================================================
+   NAVBAR
+   ========================================================================== */
+.navbar 
+{
+  position: fixed; /*To make it stick to a specific position 
+  even when the page is scrolled*/
+  z-index: 9999; /*To make the navbar always appear first*/
+  top: 0; /*Topmost*/
+  width: 100%; /*To fit the body*/
+  background-color: #3db8c0; /*background (BG) color */
+  color: white; /*h1 & active links text colors inside navbar from blue to white*/
+  padding: 30px; /* size from below */
+  text-align: center; /*All the text inside the navbar should be in center*/
+  box-shadow: 5px 4px 20px grey; /* shadow effect from below*/
+  transition: background-color 0.3s ease; /* smooth transition effect to the background color */
+}
+
+/* Title--------------------------------------------------------------------*/    
+h1
+{
+  margin: 0; /*Topmost*/
+  font-size: 36px; /*Size large*/
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* shadow effect to the text */
+  transition: color 0.3s ease; /* smooth transition effect to the text color */
+}
+
+h1:hover 
+{
+  color: #ff9900; /* Changes the text color when mouse is dragged over h1*/
+}
+/* Title end---------------------------------------------------------------*/      
+
+/* Logo--------------------------------------------------------------------*/  
+.navbar img 
+{
+  position: absolute; /*logo is positioned relative to its first positioned*/
+  top: -70px; /* Negative values to can shift elements opposite to the natural flow */
+  left: 0; /* Position the logo at the left edge */
+  height: 300px; /*Height sizes*/
+  width: 300px; /*Width size*/
+  transition: all 0.3s ease; /* smooth transition effect */
+}
+/* Logo end---------------------------------------------------------------*/    
+  
+/* Links------------------------------------------------------------------*/   
+nav ul 
+{
+  animation: slideIn 0.5s forwards; /* Applying slideIn animation to the navbar links */
+  opacity: 0; /* Sets the initial opacity of the navbar links to 0 */
+}
+
+@keyframes slideIn 
+{
+  0% 
+  {
+    transform: translateX(-100%); /* Moves the navbar links off the screen to the left */
+  }
+  100% 
+  {
+    transform: translateX(0); /* Moves the navbar links back to their original position */
+    opacity: 1; /* Fades in the navbar links */
+  }
+}
+
+nav ul li 
+{
+  display: inline; /*Horizontal display of text*/
+  margin-right: 20px; /*Space between texts*/
+}
+
+nav ul li a 
+{
+  color: white; /*Non-active links color*/
+  font-size: 20px; /*Non-active links size*/
+  transition: color 0.3s ease; /* smooth transition effect to the text color */
+}
+
+nav ul li a:hover /*when mouse is dragged over links*/
+{
+  color: #ff9900; /* Changes the text color of the navbar links from blue */
+  text-decoration: none; /*remove default decoration*/
+  font-weight: bolder; /*Make text bolder*/
+}
+
+nav ul li.active /*active links size & weight*/
+{
+  font-size: 25px;
+  font-weight: bolder; 
+}
+/* Links end---------------------------------------------------------------*/    
+  
+/* Search -----------------------------------------------------------------*/   
+#search 
+{
+  border-radius: 10px; /*roundness*/
+  font-size: 15px; /*Text size inside #search*/
+  position: absolute; /* #search is positioned relative to its first positioned*/
+  right: 100px; /*move to 100px, starting from right side*/
+}
+
+#search::placeholder 
+{
+  color: #000000; /* Sets the color of the search input placeholder text */
+}
+/* Search end---------------------------------------------------------------*/     
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+footer 
+{
+  background-color: #3db8c0; /*BG color of footr*/
+  position: absolute; /* footer is positioned relative to its first positioned*/
+  width: 100%;/*to fit into the body*/
+  height: auto; /*Height size*/
+  color: white; /*non-links text color*/
+  font-weight: bolder; /*weight of texts*/
+  text-align: center; /*Align text & links in center*/
+}
+
+h2 /*Title*/
+{
+  color: white; /*Title color*/
+  font-size: 30px; /*size*/
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /*Text shadow*/
+}
+
+/*Contact us form--------------------------------------------------------------*/
+h4
+{
+  font-size: 20px; /*size*/
+  margin-bottom: 10px; /*space below*/
+}
+
+.form-column 
+{
+  position: absolute; /*form is positioned relative to its first positioned*/
+  display: grid; /*To display vertically*/
+  grid-gap: 6px; /*Vertical gap*/
+  top: 0px; /*topmost*/
+  left: 200px; /*move to 200px; starting from left*/
+}
+
+button /*For Contact us & Newsletter*/
+{
+  font-weight: bolder; /*weight of texts on buttons*/
+  background-color: white; /*BG color of buttons*/
+  color: #3db8c0; /*color of texts on buttons*/
+  border: none; /*remove default button*/
+  cursor: pointer; /*To make buttons look clickable*/   
+}
+/*Contact us form end--------------------------------------------------------------*/
+
+/*Links-----------------------------------------------------------------------*/
+h3 /*useful links*/
+{
+  font-size: 20px; /*size*/
+  margin-bottom: 10px; /*space from below*/
+}
+
+.footer-links /*To align useful links 'h3' & links together*/
+{
+  padding: 0; /*Remove default padding & margin*/
+  margin: 0;
+}
+
+.footer-links a
+{
+  color: white; /*change from default blue to white*/
+}
+
+.social-media img 
+{
+  display: inline-block; /*To display horizontally*/
+  margin-top: 20px; /*space from top*/
+  width: 50px; /*width size*/
+  height: 50px; /*height size*/
+  cursor: pointer; /*To make img look clickable*/
+}
+/*Links end-----------------------------------------------------------------------*/
+
+/*Newsletter form-----------------------------------------------------------------*/
+.news-letter-form
+{
+  font-weight: bolder; /*weight*/
+  position: absolute; /*form is positioned relative to its first positioned*/
+  display: grid; /*To display vertically*/
+  grid-gap: 10px; /*Vertical gap*/
+  top: 100px; /*move to 100px, starting from top*/
+  right: 200px; /*move to 200pxx, starting from right*/
+}
+/*Newsletter form end-------------------------------------------------------------*/
+
+/* ==========================================================================
+   SCROLL-UP BUTTON
+   ========================================================================== */
+#scrollBtn 
+{
+  position: fixed; /*To make it stick to a specific position 
+  even when the page is scrolled*/
+  bottom: 20px; /*move to 20px, starting from bottom*/
+  right: 30px; /*move to 30px, starting from right*/
+  z-index: 99; /*To make it appear infront of everything*/
+  font-size: 40px; /*size of an arrow*/
+  font-weight: bolder; /*weight of an arrow*/
+  background-color: #3db8c0; /*BG color of button*/
+  color: white; /*color of arrow on button*/
+  cursor: pointer; /*to make the clickable button look clickable*/
+  padding: 20px; /*space around the button*/
+  border-radius: 10%; /*roundness*/
+  text-align: center; /*center the arrow*/
+  width: 35px; /*For a square shape */
+  height: 35px; /*For a square shape */
+  text-decoration: none; /*Remove underline*/
+  box-shadow: 0 5px 5px black; /* Add shadow */
+}
+
+/* ==========================================================================
+  RESPONSIVENESS
+  ========================================================================== */  
+@media ((max-width: 1292px) and (min-width: 880px)) /*For tablet screens*/
+/*Some many values are reduced to fit the smaller screens*/
+{
+  /*Navbar ============================================*/
+  .navbar img 
+  {
+    /*Reducing & adjusting to fit in small screen*/
+    top: 0%; /*topmost*/
+    height: 120px;
+    width: 120px;
+    right: 100px; /*move to 100px, starting from right*/
+  }
+
+  nav ul 
+  {
+    animation: none; /*remove the animation applied on main screen*/
+    opacity: 1; /*display the links*/
+  }
+
+  .navbar a, #search  
+  {
+    position: static; /* To align links and search bar together*/
+  }
+
+  /*Footer ============================================*/
+  h2 
+  {
+    font-size: 25px; /*size*/
+  }
+
+  .form-column 
+  {
+    left: 90px; /*move to 90px, starting from left*/
+  }
+
+  .news-letter-form 
+  {
+    right: 70px; /*move to 70px, starting from right*/
+  }
+}
+
+@media (max-width: 880px) /*For mobile screens*/
+{
+   /*Navbar ============================================*/
+  .navbar img
+  { 
+    top: -25px; /* -ve values to can shift elements opposite to the natural flow */
+    height: 150px;
+    width: 150px;
+  }
+
+  .navbar-mobile-button /*Toggle menu navbar for max-width: 880px & below-----------------*/ 
+  {
+    z-index: 9999; /*To make it appear before navbar*/
+    position: fixed; /*To make it stick to a specific position 
+    even when the page is scrolled*/
+    top: 10px; /*move to 10px, starting from top*/
+    right: 10px; /*move to 10px, starting from right*/
+    cursor: pointer; /*to make a clickable button look clickable*/
+  } 
+  
+  /* 3 lines-----------------------------------------------------------------------*/
+  .bun-1, .patty, .bun-2
+  {
+    width: 35px; /*width & height of 3 lines (buns & patty)*/
+    height: 5px; 
+    background-color:white; /*color of 3 lines (buns & patty)*/
+    margin: 6px; /*Space between the 3 lines*/
+    transition: 0.4s; /*smooth effect of change when the button is clicked*/
+  }
+
+  /*Rotate bun-1, bun-2 & remove patty to make a cross when clicked*/
+  .change .bun-1
+  { 
+    transform :rotate(-45deg) translate(-9px,6px); 
+  }
+  .change .patty
+  { 
+    opacity :0; 
+  }
+  .change .bun-2
+  { 
+    transform :rotate(45deg) translate(-8px,-8px); 
+  }
+  /* 3 lines end---------------------------------------------------------------------*/ 
+
+  /*Links -------------------------------------------------------------------------*/ 
+  nav ul 
+  {
+    display: none; /*Initially disable the links*/
+    position: absolute; /*links are positioned relative to its first positioned*/
+    top: 80%; /*move to 80% starting from top*/
+    left: 0; /*to center the entire toggle menu*/
+    width: 100%; /*to fit in the body*/
+    background-color: #3db8c0; /*BG color of toggle menu*/
+    opacity: 1; /*display the links*/
+    padding: 0; /*To center the contents in toggle menu*/  
+  }
+
+  nav ul li 
+  {
+    display: block; /*To display the links vertically*/
+  }
+
+  nav ul.active 
+  {
+    display: block; /*To display the links vertically*/
+  }
+  /*Links end---------------------------------------------------------------------*/ 
+  /*Toggle menu navbar end---------------------------------------------------------*/
+  
+  /*Footer ============================================*/  
+  footer
+  {
+    height: auto; /* for max-width: 880px & below */
+    padding-bottom: 20px; /*space from below the footer*/
+  }
+  
+  #search,.form-column, 
+  .news-letter-form 
+  { 
+    position: static; /* remove absolute position for @media (max-width: 880px) & below*/
+    margin: 20px 0; /*sets the top & bottom margins to 20px, & the 
+    left & right margins to 0 for @media (max-width: 880px) & below */
+  }
+  
+  .form-column, .news-letter-form
+  {
+    max-width: 35%; /*max width of text input & button for @media (max-width: 880px) 
+    & below*/
+    margin: 0 auto; /* Center the form columns horizontally for 
+    @media (max-width: 880px) & below */
+  }
+}
+
+@media (max-width: 600px) /*For smaller mobile screens*/ 
+{
+  /*Navbar ============================================*/
+  .navbar
+  {
+    padding: 25px; /*space around the navbar*/
+  }
+
+  .navbar img 
+  {
+    top: -10px; /* -ve values to can shift elements opposite to the natural flow */
+    height: 100px; /*height & width size*/
+    width: 100px;
+  }
+
+  h1
+  {
+    font-size: 25px; /*title size*/
+  }
+}
+
+/*
+- Index CSS style
+All class names ending with '-index' belongs to index/home page 
+
+Index:
+1. Data 
+2. News
+3. Wellness
+4. Eat, Exercise, Anxiety (Wellness 2nd part)
+5. Responsiveness; For tablet screens, mobile screeens & smaller mobile screens
+
+Index page Design inspiration: health.com
+*/
+
+/* ==========================================================================
+  DATA
+  ========================================================================== */  
+.main-Data-index 
+{
+  display: grid; /*Able the Grid*/
+  grid-auto-flow: column; /*Display as first Column*/
+  margin-top: 200px; /*space from above*/
+}
+    
+.data-index 
+{
+  padding: 8px 32px 8px 32px; /* sets the top & bottom padding to 8px, & 
+  the left & right padding to 32px */
+}
+    
+.line-between-Data-index /*2 lines that divides the data into 3*/
+{
+  border-right: 1px solid #007e92; 
+  border-left: 1px solid #007e92;
+}
+
+.data-index h5
+{
+  font-size: 32px; /*size of data h5*/
+  text-align: center; /*center the data h5*/
+  font-weight: bolder; /*weight of data text*/
+  color: rgb(127, 85, 243); /*color of data h5*/
+  margin: 0px; /*remove default margin between data h5 & p*/
+}
+
+.data-index p 
+{
+  font-weight: bolder; /*weight of data p*/
+  font-size: 20px; /*size of data p*/
+  color: rgb(127, 85, 243); /*color of data p*/
+  margin: 0; /*remove default margin between data h5 & p*/
+  text-align: center; /*center the data p*/
+}
+
+/* ==========================================================================
+    NEWS
+  ========================================================================== */ 
+.news-grid-Container-index
+{
+  padding: 0 50px 50px 50px; /*To align contents in center*/
+  margin-top: 70px; /*space from top*/
+  width: 105%; /*size of container*/
+}
+
+.news-Rows-index 
+{
+  display: grid; /*To display in columns*/
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /*Dipaly in colum & 
+  adjust its size*/
+  grid-gap: 20px; /*space between each grid*/
+}
+
+/*Headline News-----------------------------------------------------*/
+.headline-News-index 
+{
+  display: flex; /*to allow elements to be laid out in any direction & have 
+  flexible widths & heights. */
+  flex-direction: column; /*1 column*/
+  row-gap: 15px; /*Vertical gap*/
+}
+
+.Image-news-index 
+{
+  border-radius: 20px; /*Magnesium news image*/
+}
+
+.news-tag-index /*Styling News tag*/
+{
+  font-weight: bolder; /*text weight*/
+  font-size: 15px; /*text size*/
+  color: white; /*text color*/
+  /*Styling text background*/
+  border-radius: 50px; /*BG shape; round*/
+  background-color: #3db8c0; /*BG color*/
+  padding: 6px 8px; /*Overall size*/
+  width: 42px; /*width size*/
+}
+
+.headline-News-h6-index
+{
+  font-weight: bolder; /*h6 weight*/
+  font-size: 30px; /*h6 size*/
+  margin: 0; /*remove default margin*/
+}
+
+.headline-News-h6-index a
+{
+  text-decoration: none; /*remove default decoration*/
+  color: #4d388b; /*h6 link text color*/
+}
+
+.headline-News-h6-index li
+{
+  list-style: none; /*remove default list-style*/
+}
+/*Headline News end------------------------------------------------*/
+
+/*Latest News------------------------------------------------------*/
+.section-index
+{
+  border: 1px solid #4d388b; /*border color & size*/
+  border-radius: 8px;/*border roundness*/
+  height: 600px; /*To adjust the border*/
+}
+
+.latest-NewsTitle-index h6
+{
+  margin: 0; /*remove default margin*/
+  font-weight: bolder; /*weight of h6*/
+  font-size: 40px; /*size of h6*/
+  text-align: center; /*h6 text in the middle of container*/
+  color: white; /*color of h6 text*/
+  /*styling h6 background*/
+  border-radius: 8px 8px 0 0; /* sets the top-left & top-right border radius to 8px, 
+  & the bottom-left & bottom-right border radius to 0. This creates a rounded 
+  rectangle shape */
+  background-color: #007e92; /*h6 text BG color*/
+}
+
+.news-link-index
+{
+  color: rgb(43, 0, 160); /*links color inside the container*/
+  text-decoration: none; /*remove default text decoration*/
+  font-weight: bolder; /*links weight*/
+  margin: 0; /*remove default margin to fit in the container*/
+  font-size: 15px; /*links p size*/
+}
+
+.news-link-index h6
+{
+  margin: 7px 0 0 0; /* sets the h6 top margin to 7px, & the right, bottom, & left 
+  margins to 0. */
+  font-size: 20px; /*size of h6*/
+}
+
+.news-article-index
+{
+  margin: 0 2px 0 10px;/*sets the top margin to 0, right margin to 2px, bottom 
+  margin to 0, & left margin to 10px. */
+}
+
+.time-and-author-index /*text weight, size & color*/
+{
+  font-weight: bolder;
+  font-size: 15px;
+  color: #625e65;
+}
+/*Latest News end--------------------------------------------------*/
+
+/*Popular----------------------------------------------------------*/
+.gif-and-popular-index
+{
+  flex-direction: column; /*1 Column*/
+}
+
+.popular-index h6
+{
+  margin: 4%; /*space */
+  font-size: 30px; /*h6 size*/
+}
+
+.popular-index a 
+{
+  display: block; /*To display vertically*/
+  color: white; /*links text color*/
+  font-weight: bolder; /*links text weight*/
+  /*text background style*/
+  background-color: #007e92; /*links text BG color*/
+  padding: 10px 10px; /* sets the top & bottom padding to 10px, & the left 
+  & right padding to 10px. */
+  width: 60%; /*width size*/
+  border-radius: 10px; /*roundness*/
+}
+
+.popular-index li
+{
+  list-style: disc outside; /*changed from default setting to disc*/
+}
+/*Popular end-------------------------------------------------------*/
+
+/* ==========================================================================
+    WELLNESS
+  ========================================================================== */ 
+.wellness-sideTitle-index 
+{
+  display: flex;  /*Appears on the right side*/
+  justify-content: space-between; /*Space between the title & Eat Well subtitle*/ 
+}
+  
+.wellness-link-index li
+{
+  list-style: disc outside; /*changed from default setting to disc*/
+}
+
+.wellness-link-index a
+{
+  text-decoration: underline; /*changed from default setting to underline*/
+  font-weight: bold; /*link text weight, size & color*/
+  font-size: 20px;
+}
+
+/* ==========================================================================
+  EAT, EXERCISE, ANXIETY
+  ========================================================================== */ 
+.eat-well-Container-index, 
+.exercise-body-Container-index, 
+.anxiety-Container-index   
+{
+  padding: 0 48px 32px 32px; /* sets the top padding to 0, right padding to 48px, 
+  bottom padding to 32px, & left padding to 32px. */
+}
+
+/*Intro of each------------------------------------------------------------*/
+.eat-well-Container-index h6, 
+.exercise-body-Container-index h6, 
+.anxiety-Container-index h6       /* Title */
+{
+  font-size: 32px; /*title size*/
+  font-weight: bold; /*title weight*/
+  margin-block-start: 10px; /*Keep the image in shape*/
+}
+
+.eat-wellTitle-and-image-index,
+.exercise-Title-and-image-index,
+.anxiety-Title-and-image-index
+{
+  display: flex;  /* To display both horizontally */
+  column-gap: 16px; /*gap between image and title h6*/
+}
+  
+.eat-well-index,  /* round profile image of each */
+.exercise-index,
+.anxiety-index  
+{
+  width: 100px; /*width size*/
+  margin-bottom: 10px; /*space from below*/
+}
+/*Intro of each end----------------------------------------------------------*/
+
+/*Column container----------------------------------------------------------*/
+.eatwell-grid-container-index,
+.exercise-grid-container-index,
+.anxiety-grid-container-index 
+{
+  display: grid; /*ables the grid*/
+  gap: 16px; /*space between the columns*/
+  grid-template-columns: repeat(3, 1fr); /*3 Columns*/
+}
+  
+.list-below-index, /* Arrange everything neatly in column */ 
+.exercise-list-below-index,
+.anxiety-list-below-index 
+{
+  display: flex; /*to allow the items to be laid out in column direction*/
+  flex-direction: column; /*arrange all items in column*/
+  row-gap: 16px; /*vertical space between each item*/
+}
+  
+.list-below-index img, /* images in columns*/
+.exercise-list-below-index img,
+.anxiety-list-below-index img 
+{
+  border-radius: 10px; /*make images round*/
+}
+  
+.wellness-tag-index
+{
+  font-weight: bolder; /*text weight, size & color*/
+  font-size: 15px;
+  color: white;
+  /*styling text background*/
+  background-color: #007e92; /*BG color*/
+  border-radius: 50px; /*roundness*/
+  padding: 6px 10px; /*overal space*/
+  width: fit-content; /*To give a suitable width*/
+}
+
+.link-below-index a, /*text weight, size & color of links in columns*/
+.exercise-link-below-index a,
+.anxiety-link-below-index a
+{
+  font-weight: bold;
+  font-size: 30px;
+  color: black; /*changed from default blue color to black*/
+}
+  
+.list-below-index p,
+.exercise-list-below-index p,
+.anxiety-list-below-index p 
+{
+  margin: 0; /*remove default margin*/
+  /*text color, weight & size of list below p*/
+  color: #373539;
+  font-weight: bolder;
+  font-size: 15px;
+}
+/*Column container end----------------------------------------------------------*/
+
+/*Contact us message---------------------------------------------------------------- */
+.message-index /*p size, top space & weight*/
+{
+  font-size: larger;
+  margin-top: 60px;
+  font-weight: bolder;
+}
+
+.message-index a
+{
+  text-decoration: underline; /*changed from default to underline*/
+}
+/*Contact us message end-------------------------------------------------------------- */
+
+/* ==========================================================================
+  RESPONSIVENESS
+  ========================================================================== */
+@media ((max-width: 1292px) and (min-width: 880px)) /*For tablet screens*/
+/*Some many values are reduced to fit the smaller screens*/
+{
+  /*Data ============================================*/
+  .main-Data-index  
+  {
+    margin-top: 210px; /*space from above*/
+  }
+
+  .data-index 
+  {
+    padding: 8px 16px; /* For max-width: 1292px & below */
+  }
+
+  /*News ============================================*/
+  .news-grid-Container-index 
+  {
+    width: auto; /* remove fixed width */
+    margin-top: 40px;  /*space between datas & grid container for max-width: 1292px 
+    & below*/
+  }
+
+  .headline-News-h6-index /*Headline News*/
+  {
+    font-size: 24px; /* For max-width: 1292px & below */
+  }
+
+  /*Latest News------------------------------------------------------------*/
+  .section-index 
+  {
+    height: 650px; /* to adjust border */
+  }
+
+  .news-link-index h6
+  {
+    font-size: 20px; /*h6 size For max-width: 1292px & below*/
+  }
+  /*Latest News end------------------------------------------------------------*/
+
+  /*Wellness ============================================*/
+  .wellness-sideTitle-index 
+  {
+    align-items: center; /*to align side title vertically in middle*/
+  }
+
+  /*Eat, Exercise, Anxiety ============================================*/
+  /*column container------------------------------------------------------------*/
+  .eat-well-Container-index,  
+  .exercise-body-Container-index,
+  .anxiety-Container-index 
+  {
+    padding: 0 16px 16px 16px; /* padding-top is 0, padding-right, bottom 
+    & left is 16px for column to take*/
+  }
+
+  .eatwell-grid-container-index,
+  .exercise-grid-container-index,
+  .anxiety-grid-container-index 
+  {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  }
+  /*column container end------------------------------------------------------------*/
+}
+   
+@media (max-width: 880px) /*For mobile screens*/
+{
+  /*Data ============================================*/
+  .main-Data-index
+  {
+    margin-top: 150px; /*space from above*/
+  }
+
+  /*News ============================================*/
+  .news-grid-Container-index 
+  {
+    width: auto; /* remove fixed width */
+  }
+
+  .section-index /*Latest News*/
+  {
+    height: 660px; /* For max-width: 880px & below */
+  }
+
+  /*Wellness ============================================*/
+  /*Eat, Exercise, Anxiety ============================================*/
+  /*Intro of each------------------------------------------------------------*/
+  .wellness-sideTitle-index, /*For max-width: 880px & below*/
+  .eat-wellTitle-and-image-index,
+  .exercise-Title-and-image-index,
+  .anxiety-Title-and-image-index  
+  {
+    flex-direction: column; /*items are stacked vertically*/
+    align-items: center; /*to center the title*/
+  }
+  /*Intro of each end----------------------------------------------------------*/
+
+  /*column container------------------------------------------------------------*/
+  .eat-well-Container-index, 
+  .exercise-body-Container-index,
+  .anxiety-Container-index 
+  {
+    padding: 0 16px 16px 16px; /* padding-top is 0, padding-right, bottom 
+    & left is 16px for column to take*/
+  }
+
+  .eatwell-grid-container-index, /* column container for max-width: 880px & below */
+  .exercise-grid-container-index,
+  .anxiety-grid-container-index 
+  {
+    grid-template-columns: repeat(1, 1fr); /* 1 column */
+  }
+  /*column container end------------------------------------------------------------*/ 
+}
+
+/*
+- News CSS style
+All class names ending with '-news' belongs to news page  
+
+Index:
+1. News articles 
+2. Responsiveness; For tablet screens, mobile screeens & smaller mobile screens
+*/
+
+/* ==========================================================================
+   NEWS ARTICLES
+   ========================================================================== */ 
+.section-news
+{
+  position: relative; /*stay Relative to its positon*/
+  margin: 15% 12% 0 12%; /*To keep all the containers at top and center*/
+}
+
+/* News tag---------------------------------------------*/
+.tag-news
+{
+  margin-bottom: 15px; /*space from below*/
+  font-weight: bolder; /*text weight, size & color*/
+  font-size: 15px;
+  color: white;
+  /*styling text background*/
+  background-color: #3db8c0; /*BG color*/
+  border-radius: 50px; /*BG roundness*/
+  padding: 6px 8px; /*Overall size*/
+  width: 43px; /*BG width size*/
+}
+/* News tag end---------------------------------------------*/
+
+/* Articles---------------------------------------------*/
+.article-news /*container for each news*/
+{
+  margin-bottom: 40px; /* Bottom of each of contents */
+  padding: 20px; /*overall space*/
+  border: 1px solid #4d388b; /*border size, color, roundness & width size*/
+  border-radius: 8px;  
+  width: auto;
+}
+
+.title-news /*Title in each container*/
+{
+  color: white; /*title texts color, size, weight & alignment*/
+  font-size: 30px;
+  font-weight: bolder;
+  text-align: center;
+  /*For styling titles background */
+  background-color: rgb(0,126,146); /*BG color*/
+  padding: 5px; /*overall space added*/
+  margin: -20px -20px 15px; /* Using negative values to cancel padding effect of
+  .article-news on background color*/
+  /* This method is different from index css because images were not aligning properly*/
+  border-radius: 8px 8px 0 0; /*a border with rounded top corners & flat bottom corners */
+}
+
+.p-news
+{
+  font-weight: bolder;  /*p weight, size & color*/
+  font-size: 20px;
+  color: rgb(43, 0, 160);
+  line-height: 1.4; /*vertcal height*/
+}
+
+.article-image-news
+{
+  width: 100%;
+  /*To display it in center*/
+  margin: auto;
+  display: block;
+}
+
+.article-author-news
+{
+  font-size: 20px; /*text size, weight & color for author*/
+  font-weight: bolder;
+  color: #625e65;
+}
+/* Articles end---------------------------------------------*/
+
+/* ==========================================================================
+  RESPONSIVENESS
+  ========================================================================== */
+@media ((max-width: 1292px) and (min-width: 880px)) /*For tablet screens*/
+/*Some many values are reduced to fit the smaller screens*/
+{
+  /*News articles ============================================*/
+  .section-news
+  {
+    margin: 250px 10% 0% 10%; /* to center the contents */
+  }
+
+  /* Articles---------------------------------------------*/
+  .article-news
+  {
+    width: auto; /* width size */
+  }
+
+  .article-image-news
+  {
+    max-width: 80%; /* width size */
+  }
+  /* Articles end---------------------------------------------*/
+}
+
+@media (max-width: 880px) /*For mobile screens*/
+{
+  /*News articles ============================================*/
+  .section-news
+  {
+    margin: 130px 10% 0% 10%; /* to center the contents */
+  }
+
+  /* Articles---------------------------------------------*/
+  .title-news
+  {
+    font-size: 20px; /* text size */
+  }
+
+  .article-news
+  {
+    width: auto; /*width of each article container*/
+  }
+
+  .p-news 
+  {
+    font-size: 15px; /* p size */
+  }
+
+  .article-image-news
+  {
+    max-width: 100%; /* width size */
+  }
+  /* Articles end---------------------------------------------*/
+}
+   
+/*
+- Wellness CSS style
+All class names ending with '-wellness' belongs to wellness page   
+
+Index:
+1. Wellness Section
+2. Intro
+3. Articles
+4. Tools 
+5. Responsiveness; For tablet screens, mobile screeens & smaller mobile screens
+*/
+  
+/* ==========================================================================
+  WELLNESS SECTION
+  ========================================================================== */  
+.section-wellness
+{
+  position: relative; /*stay Relative to its positon*/
+  margin: 15% 1% 0 1%; /*To keep all the containers at top & in center*/
+}
+
+/* ==========================================================================
+INTRO
+========================================================================== */ 
+.tag-wellness /*Styling News tag*/
+{
+  font-weight: bolder;
+  font-size: 16px;
+  color: white;
+  /*styling tag background*/
+  background-color: #007e92; /*BG color*/
+  border-radius: 50px; /*BG roundness*/
+  padding: 6px 8px; /*Overall size*/
+  width: 80px; /*width size*/
+  margin: auto auto 15px auto; /* To center it horizontally & give it a bottom margin 
+  of 15px */
+}
+
+.intro-wellness
+{
+  font-size: 20px; /*intro p size, color, alignment & weight*/
+  color: black;
+  text-align: center;
+  font-weight: bolder;
+}
+
+/* ==========================================================================
+ARTICLES
+========================================================================== */ 
+/*Articles Main------------------------------------------------------------*/
+.article-wellness
+{
+  margin-bottom: 50px;  /* Bottom of each of the container */
+  padding: 10px; /*overall space used by contents inside the container*/
+  border-radius: 8px; /*container border roundness*/
+  width: auto; /*container border width*/
+  border: 1.5px solid #4d388b; /*border size & color*/
+}
+
+.title-wellness
+{
+  color: white; /*title texts color, size, weight & alignment*/
+  font-size: 25px;
+  font-weight: bolder;
+  text-align: center;
+  /*For styling h2 background colour */
+  background-color: rgb(0,126,146); /*BG color*/
+  padding: 10px; /*overall space taken by BG*/
+  margin: -20px -12px 15px; /* Using negative values to cancel padding effect of
+  .article-wellness on background color*/
+  border-radius: 8px 8px 0 0; /*a border with rounded top corners & flat bottom corners */ 
+}
+
+.authenticity-check-wellness
+{
+  font-weight: bolder; /*text weight, color & size for checking authencity*/
+  color: black;
+  font-size: 15px;
+}
+
+.article-wellness p 
+{
+  color: black; /*text color, weight & size for author*/
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 1.4; /*vertcal height*/
+}
+
+span 
+{
+  background-color:	rgb(250, 250, 51); /*Highlighter*/
+  padding: 2px; /*overall space in highlighter*/
+}
+/*Articles Main end------------------------------------------------------------*/
+
+.bmi-chart-img-wellness
+{
+  width: 90%; /*height & width size*/
+  height: auto;
+  /*To display it in center*/
+  display: block;
+  margin: auto;
+}
+
+/* ==========================================================================
+ TOOLS
+========================================================================== */ 
+/*Calculators------------------------------------------------------------*/
+#calculator-container 
+{
+  width: 250px; /*width of container*/
+  margin: 0 auto; /* Centers the container horizontally */
+  text-align: center; /*center all the text*/
+  border-radius: 10px; /*countainer roundness*/
+  padding: 30px; /*overall space taken by items in a container*/
+  border: 1px solid #4d388b; /*container border size & color*/
+}
+
+.calculator-h6-wellness /*title for calculators*/
+{
+  margin: auto 0 10%; /*centers the h6 vertically & its bottom margin is 10% */
+  font-size: 35px; /*h6 size, weight & color*/
+  font-weight: bold;
+  color: #4d388b;
+}
+
+/* Styles for number value input placeholder */
+input[type="number"] 
+{
+  width: 80%; /*width size*/
+  padding: 12px 20px; /*overall size*/
+  margin: 8px 0; /*a top & bottom margin of 8px, a left & right margin of 0 */
+  border: 1px solid #4d388b; /*border size &  color of input*/ 
+  border-radius: 4px; /*corner roundness*/
+}
+
+/* Styles for the submit button */
+input[type="submit"] 
+{
+  width: 80%; /*width size*/
+  background-color: rgb(0,126,146); /*BG color*/
+  padding: 10px 10px; /*overall size*/
+  margin: 8px 0; /*a top & bottom margin of 8px, a left & right margin of 0 */
+  border: none; /*remove default border*/
+  border-radius: 10px; /*corner roundness*/
+  cursor: pointer; /*to make clickable button look like clickable*/
+  color: white; /*text color & weight*/
+  font-weight: bold;
+}
+
+/* Styles for the submit button when mouse is dragged over it*/
+input[type="submit"]:hover 
+{
+  background-color: rgb(1, 98, 113); /*buttons BG color*/
+}
+
+/* Styles for the submit button when clicked */
+input[type="submit"]:active
+{
+  background-color: #ff9900; /*buttons BG color*/
+} 
+
+/* Styles for the result element */
+#bmi-result, #protein-result 
+{
+  width: 80%; /*border width*/
+  margin: 20px auto 0; /*a top margin of 20px, horizontally center it & 
+  has a bottom margin of 0 */
+  font-weight: bolder; /*text weight & color*/
+  color: #4d388b;
+  border: 1px solid #4d388b; /*border size & color*/
+  border-radius: 10px; /*rounded corners of border*/ 
+  padding: 10px 10px; /*overall space added for text*/
+}
+/*Calculators end------------------------------------------------------------*/
+
+/*Journal------------------------------------------------------------*/
+.top-leaf-wellness,.bottom-leaves-wellness  
+{
+  text-align: center; /*Display leaves in center*/
+}
+
+/*For leaves placeholder text*/
+.leaf-wellness::-webkit-input-placeholder
+{
+  text-align: center; /*Display text in center*/
+}
+
+/*textarea for 3 leaves*/
+.leaf-wellness 
+{
+  width: 120px; /*leaves width & height size*/
+  height: 120px;
+  border-radius: 50%; /*make leaves completely round*/
+  background-color: lightgreen; /*fill the leaf color*/
+  padding: 30px; /* add space to keep the text typed within the area */
+}
+
+.branch-wellness 
+{
+  width: 20px; /*branch width & height size*/
+  height: 150px;
+  background-color: brown; /*fill the branch color*/
+  /*Display the branch in center*/
+  display: block;
+  margin: auto;
+}
+
+.relieve-anxiety-wellness /*Title for journal & scenic sounds*/
+{
+  margin: 2% 0; /* a top & bottom margin of 2%, a left & right margin of 0 */
+  font-size: 30px; /*title size & weight*/
+  font-weight: bold;
+}
+/*Journal end------------------------------------------------------------*/
+
+/*Scenic Sounds ------------------------------------------------------------*/
+.sound-buttons-wellness
+{
+  text-align: center; /*To center the buttons*/
+}
+
+/* I hid the actual input radio buttons & created new buttons on my 
+own by using label */
+input[type="radio"] 
+{
+  display: none;
+}
+
+/* Style the labels to look like buttons */
+.sound-label-wellness 
+{
+  display: inline-block; /* behave like a mix of inline & block elements */ 
+  padding: 10px 20px; /*overall space in buttons for text*/
+  background-color: rgb(255, 255, 181); /*buttons BG color*/
+  border: 1px solid #4d388b; /*buttons border size & color*/
+  border-radius: 10px; /*border rounded corners*/
+  cursor: pointer; /*to make clickable buttons look like clickable*/
+}
+
+/* Style on hover */
+.sound-label-wellness:hover
+{
+  background-color: yellow; /*buttons BG color*/
+}
+
+/* Style the selected label buttons */
+input[type="radio"]:checked + .sound-label-wellness 
+{
+  background-color: yellow; /*buttons BG color*/
+}
+
+/* Style the volume slider */
+#volume-slider 
+{
+  cursor: pointer; /*to make clickable slider look like clickable*/
+  width: 200px; /*width size*/
+  margin-top: 5px; /*space from top*/
+  /*to display it in center*/
+  display: block;
+  margin: auto;
+}
+/*Scenic Sounds end------------------------------------------------------------*/
+
+/* ==========================================================================
+  RESPONSIVENESS
+  ========================================================================== */
+@media ((max-width: 1292px) and (min-width: 880px)) /*For tablet screens*/
+/*Some many values are reduced to fit the smaller screens*/
+{
+  /*Wellness Section ============================================*/
+  .section-wellness
+  {
+    margin: 230px 3% 0 3%; /* to center the contents */
+  }
+
+  /*intro ============================================*/    
+  .tag-wellness
+  {
+    font-size: 15px; /* For max-width: 1292px & below */
+    width: 75px;     /* For max-width: 1292px & below */ 
+    margin-bottom: 10px; /*space from below*/
+  }
+
+  .intro-wellness
+  {
+    font-size: 15px;  /* text size */ 
+  }
+
+  /*Articles ============================================*/
+  /*Articles Main------------------------------------------------------------*/
+  .article-wellness 
+  {
+    width: auto; /*width & bottom space of each container*/
+    margin-bottom: 40px;
+  }
+
+  .title-wellness
+  {
+    font-size: 20px; /*title size*/
+  }
+
+  .article-wellness p 
+  {
+    font-size: 15px; /* For max-width: 1292px & below */ 
+  }
+  /*Articles Main end------------------------------------------------------------*/
+
+  .bmi-chart-img-wellness 
+  {
+    width: 100%; /*width size*/
+    height: auto; /*height size*/
+  }
+
+  /*Tools ============================================*/ 
+  /*Calculator------------------------------------------------------------*/   
+  .calculator-h6-wellness
+  {
+    font-size: 25px; /*h6 text size*/
+  }
+  /*Calculator end------------------------------------------------------------*/
+}
+
+@media (max-width: 880px) /*For mobile screens*/
+{
+  /*Wellness Section ============================================*/
+  .section-wellness
+  {
+    margin: 100px 3% 0 3%; /* to center the contents */
+  }
+
+  /*intro ============================================*/   
+  .tag-wellness
+  {  
+     margin: 135px auto 5px; /* top & bottom margins*/
+  }
+
+  .intro-wellness
+  {
+    font-size: 14px; /*text size*/ 
+  }
+
+  /*Articles ============================================*/
+  /*Articles Main------------------------------------------------------------*/
+  .article-wellness img
+  {
+    /*To display it in center for max-width: 880px & below*/
+    margin: auto;
+    display: block;
+  }
+
+  .article-wellness 
+  {
+    width: auto; /*width & bottom space of each container*/
+    margin-bottom: 30px;
+  }
+  
+  .title-wellness
+  {
+    font-size: 18px; /*title text size*/
+  }
+  /*Articles Main end------------------------------------------------------------*/ 
+
+  .bmi-chart-img-wellness 
+  {
+    width: 100%; /*width & height size*/
+    height: auto;
+  }
+
+  /*Tools ============================================*/ 
+  /*Calculator------------------------------------------------------------*/ 
+  #calculator-container
+  {
+    width: 200px; /* For max-width: 880px & below */
+  }
+
+  .calculator-h6-wellness
+  {
+    font-size: 20px; /* For max-width: 880px & below */
+  }
+  /*Calculator end------------------------------------------------------------*/ 
+}
+
+@media (max-width: 600px) /*For smaller mobile screens*/ 
+{
+  /*Wellness Section ============================================*/
+  .section-wellness
+  {
+    margin: 100px 3% 0 3%; /* to center the contents */
+  }
+
+  /*Intro ============================================*/   
+  .tag-wellness
+  {
+    margin-bottom: 2px; /*space from below*/
+  }
+
+  /*Articles ============================================*/  
+  /*Articles Main------------------------------------------------------------*/   
+  .article-wellness 
+  {
+    margin-bottom: 20px; /*space from below*/
+  }
+
+  .title-wellness
+  {
+    font-size: 16px; /*title text size*/
+  }
+
+  .article-wellness img
+  {
+    width: 80%; /*width size of all pics except for bmi chart*/
+  }
+  /*Articles Main end------------------------------------------------------------*/ 
+
+  /*Tools ============================================*/
+  /*Journal------------------------------------------------------------*/ 
+  .leaf-wellness 
+  {
+    width: 60px; /*width & height size*/
+    height: 60px;
+  }
+  /*Journal end------------------------------------------------------------*/  
+}
+
+/*
+- Ai therapy CSS style
+ All class names ending with '-bot' belongs to bot page 
+
+Index:
+1. Contents
+2. Responsiveness; For tablet screens, mobile screeens & smaller mobile screens
+*/
+
+/* ==========================================================================
+ CONTENTS
+========================================================================== */ 
+.icon-bot
+{
+  position: relative; /*stay Relative to its positon*/
+  top: 150px; /*move to 150px, starting from top*/
+  left: 60%; /*move to 60%, starting from left*/
+  height: 300px; /*height & width size*/
+  width: 300px;
+}
+
+/*Questions & responses-------------------------------------------------*/
+.glass-bot /*bot container*/
+{
+  margin: 2% 30% 5% 30%; /* To adjust it in center */
+  border: 1px solid #4d388b; /*border size & color*/
+  border-radius: 8px; /*rounded corners*/ 
+  padding: 50px; /*space added for items inside*/
+  width: auto; /*width & height size of container*/
+  height: 400px;
+}
+
+.glass-bot h5
+{
+  font-size: 25px;  /*title texts size, alignment, weight & color */
+  text-align: center; 
+  font-weight: bolder;
+  color: white;
+  /*Styling h3 background*/
+  background-color: rgb(0,126,146); /*BG color*/
+  padding: 15px; /*overall space in BG*/
+  margin: -50px -50px 15px; /* Using negative values to cancel padding effect of
+  .glass-bot on background color*/
+  border-radius: 8px 8px 0 0; /*a border with rounded top corners & flat bottom corners */
+}
+
+.glass-bot h6 /* Question suggestions */
+{
+  font-size: 20px; /*text size*/
+}
+
+.input-bot input /* For typing the Question */
+{
+  border-radius: 35px; /*oval shape*/
+  padding: 0 0 0 30px; /*overall space taken by the input & its text*/
+  font-size: 25px; /*text size inside input*/
+  border: 1px solid #4d388b; /*border size & color*/
+  height: 55px; /*height & width size of input*/
+  width: 100%;
+}
+
+.glass-bot p /*Responses*/
+{
+  color: black; /*text color, weight & size*/
+  font-weight: bolder;
+  font-size: 26px;
+}
+/*Questions & responses end-----------------------------------------------*/
+
+.message-bot /* Contact us Message */
+{
+  margin-left: 30px; /*30px space from left*/
+  color: black; /*text color, size & weight*/
+  font-size: 21px; 
+  font-weight: bold;
+}
+
+/* ==========================================================================
+   RESPONSIVENESS
+   ========================================================================== */
+@media ((max-width: 1292px) and (min-width: 880px)) /*For tablet screens*/
+/*Some many values are reduced to fit the smaller screens*/
+{
+  /*Contents ============================================*/  
+  .icon-bot 
+  {
+    position: relative; 
+    top: 150px; /*move to 150px, starting from top*/ 
+    left: 62%;  /*move to 62%, starting from left*/
+    height: 40%; /*height & width size*/
+    width: 310px;
+  }
+
+  /*Questions & responses-------------------------------------------------*/
+  .glass-bot 
+  {
+    margin: 4.98px 27% 6.67% 27%; /*to place it in the middle*/
+    width: auto; /*width & height size*/
+    height: 300px;
+  }
+
+  .input-bot input /* For typing the Question */
+  {
+    width: 90%; /*width, rounded corners, height, text size*/
+    border-radius: 30px;
+    height: 50px;
+    padding-left: 25px; /*space from left*/
+    font-size: 20px;
+  }
+
+  .glass-bot p /*Responses*/
+  {
+    font-size: 22px; /*p size*/
+    margin-top: 25px; /*space from top*/
+  }
+  /*Questions & responses end-----------------------------------------------*/
+
+  .message-bot /* Contact us Message */
+  {
+    margin-left: 25px; /*margin from left*/
+    font-size: 18px; /*text size*/
+  } 
+}
+
+@media (max-width: 880px) /*For mobile screens*/
+{
+  /*Contents ============================================*/  
+  .icon-bot 
+  {
+    position: relative; 
+    top: 120px; /*move to 120px, starting from top*/
+    left: 62%; /*move to 62%, starting from left*/
+    height: 25%; /*height & width size*/
+    width: 25%;
+  }
+
+  /*Questions & responses-------------------------------------------------*/
+  .glass-bot 
+  {
+    width: 30%; /*width*/
+    height: 340px; /* height appears long, because it is to make space for longer 
+    responses.*/
+    margin: 7.5px 0 3.75% 30%; /*to make it in center*/
+  }
+
+  .glass-bot h5
+  {
+    font-size: 20px; /*h5 text size*/
+  }
+
+  .glass-bot h6 /* Question suggestions */
+  {
+    font-size: 16px; /*h6 size*/
+  }
+
+  .input-bot input /* For typing the Question */
+  {
+    width: 90%; /*width size*/
+    border-radius: 25px; /*rounded corners*/
+    height: 30px; /*height size*/
+    padding-left: 20px; /*space from left*/
+    font-size: 18px; /*text size in input*/
+  }
+
+  .glass-bot p /*Responses*/
+  {
+    font-size: 20px; /*font size*/
+    margin-top: 20px; /*space from top*/
+  }
+  /*Questions & responses end-----------------------------------------------*/
+
+  .message-bot /* Contact us Message */ 
+  {
+    margin-left: 20px; /*space from left*/
+    font-size: 16px; /*text size*/
+  }
+}
+
+@media (max-width: 600px) /*For smaller mobile screens*/ 
+{
+  /*Contents ============================================*/  
+  .icon-bot 
+  { 
+    position: relative; 
+    top: 70px; /*move to 70px, starting from top*/
+    right: 1px; /*move to 1px, starting from right*/
+    height: 135px; /*height & width size*/
+    width: 125px;
+  }
+
+  /*Questions & responses-------------------------------------------------*/
+  .glass-bot 
+  {
+    width: 35%; /*Increased*/
+    height: 350px; /* height appears long, because it is to make space for longer 
+    responses.*/
+    margin: 5px 0 2% 24%; /*to make it in center*/
+  }
+
+  .glass-bot h5
+  {
+    font-size: 18px; /*h5 text size*/
+  }
+  
+  .glass-bot h6 /* Question suggestions */
+  {
+    font-size: 15px; /*h6 text size*/
+  }
+  
+  .input-bot input /* For typing the Question */
+  {
+    width: 105%; /*increased*/
+    height: 8%; /*height size*/
+    padding-left: 3%; /*space from left*/
+    font-size: 16px; /*text size in input*/
+  }
+  
+  .glass-bot p /*Responses*/
+  {
+    font-size: 18px; /*text size*/
+    margin-top: 3%; /*space from top*/
+  }
+  /*Questions & responses end-----------------------------------------------*/
+  
+  .message-bot /* Contact us Message */ 
+  {
+    margin-left: 3%; /*space from left*/
+    font-size: 14px; /*text size*/
+  }
+}
+
+/*
+- About Us CSS style
+All class names ending with '-about' belongs to about page  
+
+Index:
+1. About us
+2. Responsiveness; For tablet screens, mobile screeens & smaller mobile screens
+*/
+
+/* ==========================================================================
+   ABOUT US
+   ========================================================================== */ 
+.content-container-about /* Adjusting Contents*/
+{
+  position: relative; /*stay Relative to its positon*/
+  margin-top: 150px; /*space from top*/
+  padding: 48px; /*overall space used by container*/
+}
+/*Design-------------------------------------------------------------------*/
+.front-about /*Adding design over background image*/
+{
+  background-color: rgba(224, 255, 255, 0.806); /*transparency BG color*/
+  border: 1px solid #4d388b; /*border around BG*/
+  border-radius: 8px; /*rounded corner*/
+  margin: 32px; /*overall margin*/
+  padding: 16px; /*overall space used by items*/   
+}
+/*Design end-------------------------------------------------------------------*/
+
+.front-about h5 
+{
+  font-size: 55px;  /*title texts size, alignment, color & weight*/
+  text-align: center; 
+  color: white;
+  font-weight: bolder;
+  /*Styling h3 background*/
+  background-color: rgba(2, 91, 105, 0.548); /*transparency BG color*/
+  padding: 16px; /*overall space taken by BG*/
+  margin: -15px -15px 15px; /*Using negative values to cancel padding effect of
+  .front-about on background color*/
+  border-radius: 8px 8px 0 0; /*a border with rounded top corners & flat bottom corners*/ 
+}
+
+.front-about p /*about us info*/
+{
+  font-size: 30px;
+}
+
+/*Team message-----------------------------------------------------------*/
+.message-about 
+{
+  font-size: 48px; /*text size & alignment*/
+  text-align: center; 
+}
+
+video
+{
+  display: block;
+  margin: auto; /* Centers the video horizontally */
+  /*For responsiveness*/
+  width: 60%;
+  height: auto;
+}
+/*Team message end-----------------------------------------------------------*/
+
+/* ==========================================================================
+  RESPONSIVENESS
+  ========================================================================== */
+@media ((max-width: 1292px) and (min-width: 880px)) /*For tablet screens*/
+/*Some many values are reduced to fit the smaller screens*/
+{
+  /*About us ============================================*/
+  .content-container-about 
+  {
+    margin-top: 190px; /*space from top*/
+    padding: 32px; /*space for contents*/
+  } 
+
+  .front-about h5
+  {
+    font-size: 36px; /*h5 text size*/
+  }
+
+  .front-about p 
+  {
+      font-size: 25px; /*p size*/
+  }
+
+  /*Team message-----------------------------------------------------------*/  
+  .message-about 
+  {
+      font-size: 36px; /* (max-width: 1292px) & below */
+  }
+}
+/*Team message end-----------------------------------------------------------*/
+
+@media (max-width: 880px) /*For mobile screens*/
+{
+  /*About us ============================================*/
+  .content-container-about 
+  {
+    margin-top: 100px; /*space from top*/
+  }  
+
+  .front-about h5 
+  {
+    font-size: 24px; /*h5 text size*/
+  }
+  
+  .front-about p 
+  {
+    font-size: 24px; /*text size*/
+  }
+}
+   
+@media (max-width: 600px) /*For smaller mobile screens*/ 
+{
+  /*Team message -----------------------------------------------------------*/
+  video
+  {
+    width: 100%; /*width & height size*/
+    height: auto;
+  }
+  /*Team message end-----------------------------------------------------------*/  
+}

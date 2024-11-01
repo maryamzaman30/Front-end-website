@@ -1,0 +1,283 @@
+/*
+- Report CSS file
+I've decided to create a separate CSS file for the report because I don’t want 
+the navbar & footer to be included.
+
+Index:
+ 1. Common (body, html & default settings)
+ 2. Intro
+ 3. Report: Table of contents Links
+ 4. Report
+ 5. Scroll to top button
+ 2. Responsiveness; For tablet screens, mobile screeens & smaller mobile screens
+ */
+
+/* ==========================================================================
+   COMMON
+   ========================================================================== */ 
+body 
+{
+  font-family: Arial, sans-serif;
+  background-color: lightcyan;
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  overflow-x: hidden; /*to prevent any possible horizontal scroll bar*/
+  position: relative;
+}
+
+html 
+{
+  scroll-behavior: smooth; /* Smooth scrolling for contents & scroll-up button*/
+}
+
+/*Links default setting */
+li
+{
+  list-style: none; /*removes the disc*/
+}
+
+li a:hover /*when mouse is dragged on the link*/
+{
+  color: red; /*change the color to red*/
+  text-decoration: underline; /*remove text decoration*/
+} 
+
+a
+{
+  font-weight: bold; /*links text weight*/
+  text-decoration: none; /*remove default underline*/
+  color: blue;
+}
+ 
+a:hover /*when mouse is dragged on*/ 
+{
+  color: red; /*change color & add underline*/
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   INTRO
+   ========================================================================== */ 
+h1,h2
+{
+  margin: 20px; /*overall margin space*/
+}
+
+.back-to-site /*back to website option*/
+{
+  position: absolute; /*option is positioned relative to its first positioned*/
+  top: 0.1%; /*move to 0.1%, starting from top*/
+  right: 5%; /*move to 5%, starting from right*/
+  font-size: 20px; /*option text size*/
+}
+
+/* ==========================================================================
+   REPORT: TABLE OF CONTENTS Links
+   ========================================================================== */
+#table-of-contents ul 
+{  
+  position: fixed; /*To make it stick to a specific position even when the 
+  page is scrolled*/
+  right: 30px; /*move to 30px, starting from right*/
+  border: 1px solid #4d388b; /*border size & color*/
+  padding: 20px; /*overall space given to links*/
+  border-radius: 8px; /*rounded corners*/
+  font-size: 20px; /*links texts size*/  
+}
+
+#table-of-contents a
+{
+  color: rgb(43, 0, 160); /*Links colour for table of contents*/
+}
+
+#table-of-contents li a:hover /*when mouse is dragged on the link*/
+{
+  color: red; /*change the color to red*/
+  text-decoration: none; /*remove text decoration*/
+} 
+
+/* ==========================================================================
+   REPORT
+   ========================================================================== */ 
+.report-section /* Report container---------------------------------------------*/
+{
+  margin: 5% 20% 0 10%; /* To keep the contents at top & center it */
+}
+
+.report-writing /* Report contents---------------------------------------------*/
+{
+  margin-bottom: 40px; /* Bottom of each of contents */
+  padding: 20px; /*overall space given to then contents*/
+  border: 1px solid #4d388b; /*border size & color*/
+  border-radius: 8px; /*rounded corners*/ 
+  width: auto; /*width of border*/
+}
+
+h3
+{
+  color: white; /*text color, size, weight & alignment*/
+  font-size: 30px;
+  font-weight: bolder;
+  text-align: center;
+  /*For styling h2 background colour */
+  background-color: rgb(0,126,146);
+  padding: 5px; /*overall space added*/
+  margin: -20px -20px 15px; /* Using negative values to cancel padding effect of
+  .report-writing on background color*/
+  border-radius: 8px 8px 0 0; /*a border with rounded top corners & flat bottom corners */ 
+}
+
+.report-writing hr 
+{
+  border-top: 1px solid #4d388b; /*border size & color*/
+}
+
+p 
+{
+  line-height: 1.4; /*vertcal height*/
+  font-weight: bolder; /*p weight, size & color*/
+  font-size: 20px;
+  color: rgb(43, 0, 160);
+}
+
+/* Collapsible Container ---------------------------------------------*/
+.collapsible-container 
+{
+  max-height: 0; /* Initially, the container has no height (is not visible) */
+  overflow: hidden; /* Any content that overflows the other contents is hidden */
+  transition: max-height 0.5s ease-in-out; /* A smooth animation effect when the 
+  container opens or closes */
+}
+
+button
+{
+  color: white; /*text color & weight*/
+  font-weight: bolder;
+  /*styling button background*/
+  border: 1px solid #4d388b; /*BG border size & color*/
+  border-radius: 8px; /*rounded corners*/
+  background-color: #3db8c0; /*BG color*/
+  padding: 5px; /*overall space added in buttons*/
+  cursor: pointer; /*to make clickable buttons look like clickable*/
+  /*to display it in center*/
+  display: block;
+  margin: auto;
+}  
+   
+button:hover /*when mouse is dragged over it*/
+{  
+  background-color: rgb(0,126,146); /*darker BG color*/
+}
+
+.collapsible-content img /*imgs in collapsible panel*/
+{
+  max-width: 100%; /*width & height size*/
+  height: auto;
+  /*to display img in center*/
+  display: block;
+  margin: auto;     
+}
+
+.collapsible-content .mock-up 
+{  
+  max-width: 90%; /*width & height size*/ 
+  height: auto;  
+  border: 2px solid black; /* To make the background color of img & this site 
+  unmatchable*/
+  /*to display img in center*/
+  display: block;
+  margin: auto; 
+}
+/* Collapsible Container end ---------------------------------------------*/
+
+/* ==========================================================================
+   SCROLL TO TOP BUTTON
+   ========================================================================== */ 
+#scrollBtn 
+{
+  position: fixed; /*To make it stick to a specific position 
+  even when the page is scrolled*/
+  bottom: 20px; /*move to 20px, starting from bottom*/
+  right: 30px; /*move to 30px, starting from right*/
+  z-index: 99; /*To make it appear infront of everything*/
+  font-size: 40px; /*size of an arrow*/
+  font-weight: bolder; /*weight of an arrow*/
+  background-color: #3db8c0; /*BG color of button*/
+  color: white; /*color of arrow on button*/
+  cursor: pointer; /*to make the clickable button look clickable*/
+  padding: 20px; /*space around the button*/
+  border-radius: 10%; /*roundness*/
+  text-align: center; /*center the arrow*/
+  width: 35px; /*For a square shape */
+  height: 35px; /*For a square shape */
+  text-decoration: none; /*Remove underline*/
+  box-shadow: 0 5px 5px black; /* Add shadow */
+}
+
+/* ==========================================================================
+   RESPONSIVENESS
+   ========================================================================== */
+@media ((max-width: 1292px) and (min-width: 880px)) /*For tablet screens*/
+/*Some many values are reduced to fit the smaller screens*/
+{
+  .report-section /* Report container---------------------------------------------*/
+  {
+    margin: 52px 25% 0 15%; /*To keep the contents at top & center it*/
+  }
+    
+  .report-writing /* Report contents---------------------------------------------*/
+  {
+    width: auto; /*width size*/
+  }
+}
+
+@media (max-width: 880px) /*For mobile screens*/
+{
+  .back-to-site /* Intro ---------------------------------------------*/
+  {
+    top: 0.1%; /*for @media (max-width: 880px) & below*/
+  }
+
+  .report-section /* Report container---------------------------------------------*/
+  {
+    margin: 10%; /*overall margin*/
+  }
+
+  p 
+  {
+    font-size: 15px; /*for @media (max-width: 880px) & below*/
+  }
+      
+  .report-writing /* Report contents---------------------------------------------*/
+  {
+    max-width: 60%; /*width size*/
+  }
+
+  .report-writing a 
+  {
+    word-wrap: break-word; /* To make the links fit in the border: 1px solid #4d388b;*/
+  }
+}
+
+@media (max-width: 600px) /*For smaller mobile screens*/
+{
+  .back-to-site /* Intro ---------------------------------------------*/
+  {
+    top: 0.5%; /*move to 0.5%, starting from right*/
+  }
+
+  #table-of-contents ul /* Links ---------------------------------------------*/
+  {  
+    right: 0%; /*move to 0%, starting from right*/  
+  }
+
+  .report-section /* Report container---------------------------------------------*/
+  {
+    margin: 5%; /*overall margin */
+  }
+      
+  .report-writing /* Report contents---------------------------------------------*/
+  {
+    max-width: 50%; /*width size*/
+  }     
+}

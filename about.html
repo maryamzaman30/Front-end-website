@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About us</title>
+
+    <!-- Add a favicon for the website to avoid 404 error message -->
+    <link rel="shortcut icon" href="#">
+    
+    <!-- For Responsiveness -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- For Intro -->
+    <meta name="description" content="Health Today - Reliable health info and guidance.">
+    <meta name="author" content="Health Today Team">
+    <meta name="keywords" content="anxiety, exercise, eat, guide, therapy">
+        
+    <!-- Loading Main CSS -->
+  <link rel="stylesheet" type="text/css" href="stylesheet/main.css">
+</head>
+
+<body>
+<!-- ----------------------------------navbar------------------------------------------ -->
+  <nav class="navbar">
+    <h1>Health Today</h1>
+    <img src="Images/ailogo.png" alt="Logo"> <!-- Logo -->
+    <!-- ----------Links----------- -->
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="news.html">News</a></li>
+      <li><a href="wellness.html" >Wellness</a></li>
+      <li><a href="bot.html">Ai Therapy</a></li>
+      <li class="active">About</li>
+      <li><a href="report.html">Report</a></li>
+      <li><input type="text" name="search" id="search" placeholder="Search this website"></li>
+    </ul>
+</nav>
+<!-- 3 lines for Toggle Menu Navbar on Mobile Screens -->
+<div class="navbar-mobile-button">
+  <div class="bun-1"></div>
+  <div class="patty"></div>
+  <div class="bun-2"></div>
+</div>
+<!-- ----------------------------------Contents------------------------------------------ -->    
+    <div class="content-container-about">
+      <!-- Styling background-image in html rather than in css as the relative
+      direction of this image wasn't working in css -->
+      <div style="background-image: 
+          url(Images/photo-by-giulio-rosso-chioso.jpg); 
+          border: 1px solid #4d388b; 
+          background-repeat: no-repeat; 
+          background-size: cover; 
+          border-radius: 8px; 
+          padding: 2px;">
+          <div class="front-about">
+          <h5>About us</h5>
+          <p>Health Today is a website that provides you with the most up-to-date and trustworthy 
+            information on health and wellness related news and other resources. We talk about 
+            things like eating healthy, exercise, mental health, disease prevention, and more. 
+            Your health and happiness are our top priorities.</p>
+          <p>Our team consists of experienced journalists, editors, and health experts that are 
+            enthusiastic about providing our readers with top-notch material. To guarantee that 
+            our information is accurate and current, we also work with reliable sources and 
+            organizations.</p>
+          <p>We hope you like reading our news and articles and that you learn something from 
+            them. Please don't hesitate to get in touch with us if you have any comments or 
+            recommendations. We'd be thrilled to hear from you!</p>
+          <p class="message-about">Small message from our Team<p> <!-- Team message -->
+          <video controls autoplay muted height="420" width="670"> <!-- 'Muted' to enable autoplay-->
+              <source src="videos/vimeo.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+          </video> <!-- Team message end -->
+          </div> <!--end of <div class="front-about"> -->
+      </div> <!-- end of <div style="background-image:  -->
+    </div>
+<!-- ----------------------------------footer------------------------------------------ -->
+  <footer>
+    <h2>Health Today</h2>
+    <!-- ----------Links----------- -->
+    <div class="useful-links">
+      <h3>Useful Links</h3>
+      <ul class="footer-links">
+        <li><a href="#">Contribute</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Sitemap</a></li>
+      </ul>
+    </div>
+    <!-- ----------Contact us form----------- -->
+          <form action="contact.php" method="POST" class="form-column">
+            <h4>Contact Us</h4>
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+          </form> 
+    <!-- ----------Social Media images----------- -->                 
+    <div class="social-media">
+        <img src="Images/logowik1.png" alt="Instagram Image">
+        <img src="Images/logowik2.png" alt="Facebook Image">
+        <img src="Images/logowik3.png" alt="YouTube Image">
+        <img src="Images/logowik4.png" alt="Twitter Image">
+        <img src="Images/logowik5.png" alt="LinkedIn Image">
+    </div>
+    <!-- ----------Newsletter form----------- -->
+    <form action="your-newsletter-endpoint" method="POST" class="news-letter-form">
+      <label for="email">Subscribe to our newsletter:</label>
+      <input type="email" id="email" name="email" required placeholder="Enter your email">
+      <button type="submit">Subscribe</button>
+    </form>
+  </footer> <!-- ----------End of Footer----------- -->
+    <!-- Scroll up button -->
+    <a href="#" id="scrollBtn" title="Scroll back to Top">&#94;</a>
+    <!-- Javascripts for Toggle menu navbar -->    
+    <script src="js/togglemenu.js"></script>
+     </body>
+  </html>
+<!-- 
+  Resources used:
+ -Note: source for any file like image is also mentioned in their file name, 
+  for example image named health1.webp is an image taken from health.com.
+  And if there is a number written in a file name, it means more images are
+  taken from that site and health1.webp is the first one.
+1.Navbar:-
+ -Logo: Ai generated from Edge
+2.Contents:-
+ -bg image: https://500px.com/photo/41149196/le-piscine-sunset-by-giulio-rosso-chioso
+ -Video: https://vimeo.com/
+3.Footer:-
+ -Social Media Images: https://logowik.com/social-media-vector-icon-1-16509.html
+-->

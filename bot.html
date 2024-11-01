@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ai Therapy</title>
+
+    <!-- Add a favicon for the website to avoid 404 error message -->
+    <link rel="shortcut icon" href="#">
+    
+  <!-- For Responsiveness -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- For Intro -->
+  <meta name="description" content="Health Today - Reliable health info and guidance.">
+  <meta name="author" content="Health Today Team">
+  <meta name="keywords" content="anxiety, exercise, eat, guide, therapy">
+    
+    <!-- Loading Main CSS -->
+    <link rel="stylesheet" type="text/css" href="stylesheet/main.css">
+</head>
+
+<body> 
+<!-- ----------------------------------navbar------------------------------------------ -->
+<nav class="navbar">
+  <h1>Health Today</h1>
+  <img src="Images/ailogo.png" alt="logo"> <!-- Logo -->
+  <!-- ----------Links----------- -->
+  <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="news.html">News</a></li>
+      <li><a href="wellness.html" >Wellness</a></li>
+      <li class="active">Ai Therapy</li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="report.html">Report</a></li>
+      <li><input type="text" name="search" id="search" placeholder="Search this website"></li>
+  </ul>
+</nav>
+<!-- 3 lines for Toggle Menu Navbar on Mobile Screens -->
+<div class="navbar-mobile-button">
+  <div class="bun-1"></div>
+  <div class="patty"></div>
+  <div class="bun-2"></div>
+</div>
+<!-- ----------------------------------Contents------------------------------------------ -->
+<img src="Images/ai-icon.png" class="icon-bot" title="We Care About You &#128522;" alt="icon">
+<div class="glass-bot"> <!-- Questions & responses -->
+      <h5>Ask Your Question</h5> 
+      <h6>e.g. How to reduce social anxiety?, What do you do? etc</h6>
+      <div class="input-bot"> <!-- NOT MY CODE -->
+        <input type="text" id="userBox"
+         onkeydown="if (event.keyCode == 13) { talk() }" placeholder="Type your Question">
+      </div>
+      <p id="chatLog"><!-- NOT MY CODE end -->
+        Answer Will Appear Here</p>
+    </div> <!-- Questions & responses end-->
+    <p class="message-bot">Contact us below if you want a Human Therapist</p> <!-- Contact us Message -->
+ <!-- ----------------------------------footer------------------------------------------ -->
+  <footer>
+    <h2>Health Today</h2>
+    <!-- ----------Links----------- -->
+    <div class="useful-links">
+      <h3>Useful Links</h3>
+      <ul class="footer-links">
+        <li><a href="#">Contribute</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Sitemap</a></li>
+      </ul>
+    </div>
+    <!-- ----------Contact us form----------- -->
+          <form action="contact.php" method="POST" class="form-column">
+            <h4>Contact Us</h4>
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+          </form> 
+    <!-- ----------Social Media images----------- -->                 
+    <div class="social-media">
+        <img src="Images/logowik1.png" alt="Instagram Image">
+        <img src="Images/logowik2.png" alt="Facebook Image">
+        <img src="Images/logowik3.png" alt="YouTube Image">
+        <img src="Images/logowik4.png" alt="Twitter Image">
+        <img src="Images/logowik5.png" alt="LinkedIn Image">
+    </div>
+    <!-- ----------Newsletter form----------- -->
+    <form action="your-newsletter-endpoint" method="POST" class="news-letter-form">
+      <label for="email">Subscribe to our newsletter:</label>
+      <input type="email" id="email" name="email" required placeholder="Enter your email">
+      <button type="submit">Subscribe</button>
+    </form>
+  </footer> <!-- ----------End of Footer----------- -->
+    <!-- Scroll up button -->
+    <a href="#" id="scrollBtn" title="Scroll back to Top">&#94;</a>
+    <!-- Javascripts for Toggle menu navbar & Bot-->    
+    <script src="js/togglemenu.js"></script>
+    <script src="js/bot.js"></script>
+      </body>
+   </body>
+ </html>
+<!-- Important Note: The code in Contents code is not mine, code source is: 
+  https://www.codewithrandom.com/2023/03/18/chatbot-javascript-how-to-build-a-chatbot-from-scratch-in-javascript/
+ -Credits goes to Codewith Random. However I customized it, wrote comments, responsive code 
+  & changed the bot questions along with its responses by myself.
+ -Altought, almost everything is changed. I have mentioned which code part is not changed
+  with the comment 'NOT MY CODE'   
+ -There are so many Ai therapy, so i was also inspired to create one
+  Resources used:
+ -Note: source for any file like image is also mentioned in their file name, 
+  for example image named health1.webp is an image taken from health.com.
+  And if there is a number written in a file name, it means more images are
+  taken from that site and health1.webp is the first one.
+1.Navbar:-
+ -Logo: Ai generated from Edge
+2.Contents:-
+ -Icon: Ai generated from Edge
+3.Footer:-
+ -Social Media Images: https://logowik.com/social-media-vector-icon-1-16509.html
+-->
