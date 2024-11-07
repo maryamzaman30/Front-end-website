@@ -8,4 +8,4 @@ For my final project in the second semester, I created a five-page health-focuse
 
 Note: Other code or resource used has been credited.
 
-Website Link - https://maryamzaman30.github.io/Web-Development-Final-University-of-London/
+Website Link - https://maryamzaman30.github.io/Web-Development-Final-University-of-London-front-end-website/
