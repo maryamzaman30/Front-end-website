@@ -4,8 +4,10 @@
 
 ## Associated with University of London
 
-For my final project in the second semester, I created a five-page health-focused website in HTML, CSS and JS as part of an individual web project. The site featured the latest health news, articles, wellness tips, and basic AI therapy. I conducted research, created wireframes, designed sitemaps and mock-ups, and coded the website. I added interactive tools using JavaScript and ensured responsiveness with media queries, prioritizing accessibility and usability.
+For my final project in the 2nd semester, I designed and developed a five-page health-oriented website using HTML, CSS and JavaScript, aimed at making wellness content more accessible and user-friendly. The platform provided health news, articles, wellness tips and a lightweight AI-based therapy feature, addressing the challenge of engaging users with trustworthy and digestible health information. I led the full development process, from research and wireframing to sitemap creation mock-ups and frontend coding, while integrating interactive tools and ensuring cross-device responsiveness using media queries. Throughout, I prioritized user accessibility and intuitive navigation.
 
 Note: Other code or resource used has been credited.
 
-Website Link - https://maryamzaman30.github.io/Web-Development-Final-University-of-London-front-end-website/
+Website Video - https://youtu.be/mNOj41uI6kc
+
+To explore the the app, click the link in the About section on the left
